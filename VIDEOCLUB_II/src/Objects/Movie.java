@@ -44,7 +44,7 @@ public class Movie {
     public String getGenre(){
         return this.genre;
     }
-    public int gerYear(){
+    public int getYear(){
         return this.year;
     }
     public Time getDuration(){
