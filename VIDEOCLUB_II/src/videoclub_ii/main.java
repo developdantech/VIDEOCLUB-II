@@ -23,17 +23,17 @@ public class main {
         Scanner sc = new Scanner (System.in);
         MovieService movieService = new MovieService();
         RentService rentService = new RentService (movieService);
-//        movieService.initialMovie();
+        movieService.initialMovies();
         int option = 0;
         System.out.println("Welcome to your movie club, please select an option to start");
         
         do{
             System.out.println("1. Create movie. \n"
                     + "2. List movies. \n"
-                    + "3. Create a Rent. \n"
-                    + "4. List Rented movies \n"
-                    + "5. Find a movie by title \n"
-                    + "6. Find a movie by genre \n"
+                    + "3. Find a movie by title \n"
+                    + "4. Find a movie by genre \n"
+                    + "5. Create a Rent. \n"
+                    + "6. List Rented movies \n"
                     + "7. Find a rent by date \n"
                     + "9. Finish");
             option = sc.nextInt();
@@ -45,12 +45,12 @@ public class main {
                     case 2:
                         movieService.listMovies();
                         break;
-//                    case 3:
-//                        movieService.findByTitle();
-//                        break;
-//                    case 4:
-//                        movieService.findByGenre();
-//                        break;
+                    case 3:
+                        movieService.findByTitle();
+                        break;
+                    case 4:
+                        movieService.findByGenre();
+                        break;
 //                    case 5:
 //                        rentService.createRent();
 //                        break;

@@ -52,4 +52,49 @@ public class MovieService {
         System.out.println("These are the movies on the list \n");
         }
     }
+    public void findByTitle(){
+        System.out.println("Enter the title: ");
+        String titleToFind = sc.next();
+        boolean found = false;
+        int index = 0;
+        for(Movie movie : this.movies){
+            if(movie.getTitle().toLowerCase().contains(titleToFind.toLowerCase())){
+                if(index == 0){
+                    System.out.println("Movie(s) found: ");
+                }
+                System.out.println("Title: " + movie.getTitle() + ", " + "Genre: " + movie.getGenre() + ", " + "Year: " + movie.getYear() + ", " + "Duration: " + movie.getDuration());
+                found = true;
+                index++;
+            }
+        }
+        if(!found){
+            System.out.println("Movie not found");
+        }
+    }
+    public void findByGenre(){
+        System.out.println("Enter the genre: ");
+        String genreToFind = sc.next();
+        boolean found = false;
+        int index = 0;
+        for(Movie movie : this.movies){
+            if(movie.getGenre().toLowerCase().contains(genreToFind.toLowerCase())){
+                if(index == 0){
+                    System.out.println("Movies found: ");
+                }
+                System.out.println("Title: " + movie.getTitle() + ", " + "Genre: " + movie.getGenre() + ", " + "Year: " + movie.getYear() + ", " + "Duration: " + movie.getDuration());
+                found = true;
+                index++;
+            }
+        }
+        if(!found){
+            System.out.println("Genre not found");
+        }
+        
+    }
+      public void initialMovies(){
+        this.movies.add(new Movie("Titanic","Drama", 1984,"03:03:03"));
+        this.movies.add(new Movie("Titanic2","Drama", 1984,"03:03:03"));
+        this.movies.add(new Movie("Titanic3","Drama", 1984,"03:03:03"));
+
+    }
 }
